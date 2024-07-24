@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfTodo.Server", "SelfTodo
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "selftodo.client", "selftodo.client\selftodo.client.esproj", "{567E8CDD-1C97-4FCD-A26D-21393BB96145}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4EF8B655-1C06-4AF5-81EB-6660FAB1630E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{567E8CDD-1C97-4FCD-A26D-21393BB96145}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{567E8CDD-1C97-4FCD-A26D-21393BB96145}.Release|Any CPU.Build.0 = Release|Any CPU
 		{567E8CDD-1C97-4FCD-A26D-21393BB96145}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4EF8B655-1C06-4AF5-81EB-6660FAB1630E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF8B655-1C06-4AF5-81EB-6660FAB1630E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF8B655-1C06-4AF5-81EB-6660FAB1630E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EF8B655-1C06-4AF5-81EB-6660FAB1630E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
