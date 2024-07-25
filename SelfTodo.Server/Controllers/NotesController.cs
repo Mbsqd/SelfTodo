@@ -23,6 +23,11 @@ namespace SelfTodo.Server.Controllers
 		[HttpPost]
 		public async Task<IActionResult> CreateNote([FromBody] CreateNoteRequest request, CancellationToken ct)
 		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
 			var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
 			var note = new Note(request.Title, request.Text, request.DateEnd, userId);
 			await _dbContext.Notes.AddAsync(note, ct);
@@ -62,6 +67,11 @@ namespace SelfTodo.Server.Controllers
 		[HttpPut("{id}")]
 		public async Task<IActionResult> UpdateNote(int id, [FromBody] UpdateNoteRequest request, CancellationToken ct)
 		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
 			var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
 			var NoteToUpdate = await _dbContext.Notes.SingleOrDefaultAsync(n => n.Id == id && n.UserId == userId, ct);
 			if (NoteToUpdate == null)
@@ -76,14 +86,12 @@ namespace SelfTodo.Server.Controllers
 			_dbContext.Notes.Update(NoteToUpdate);
 			await _dbContext.SaveChangesAsync(ct);
 
-			return Ok(new NoteDto 
-			{ 
-				Id = NoteToUpdate.Id, 
+			return Ok(new UpdateNoteResponse 
+			{
+				Id = NoteToUpdate.Id,
 				Title = NoteToUpdate.Title, 
-				Text = NoteToUpdate.Text, 
-				IsCompleted = NoteToUpdate.IsCompleted, 
-				DateCreated = NoteToUpdate.DateCreated, 
-				DateEnd = NoteToUpdate.DateEnd 
+				Text = NoteToUpdate.Text,
+				IsCompleted = NoteToUpdate.IsCompleted
 			});
 		}
 

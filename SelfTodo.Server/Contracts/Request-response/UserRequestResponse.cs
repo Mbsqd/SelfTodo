@@ -5,6 +5,7 @@ namespace SelfTodo.Server.Contracts.Request_response
 	public class RegisterUserRequest
 	{
 		[Required(ErrorMessage = "Username is required.")]
+		[MaxLength(32, ErrorMessage = "Username must be less than 32 characters")]
 		[RegularExpression(@"[a-zA-Z0-9]*$", ErrorMessage = "Username can only contain letters and numbers.")]
 		public string Username { get; set; } = string.Empty;
 
