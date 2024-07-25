@@ -1,0 +1,21 @@
+.status-block {
+	margin: 70px 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.status-code {
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 400;
+	font-size: 24px;
+	color: #ffffff;
+}
+
+.status-message {
+	margin-top: 25px;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 400;
+	font-size: 16px;
+	color: #ffffff;
+}

@@ -1,0 +1,79 @@
+.auth-form {
+	flex: 1;
+    padding: 20px;
+}
+
+.login {
+    background-color: #C4C2B6;
+    color: #000000;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.auth__header-text {
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 600;
+	font-size: 22px;
+	text-align: center;
+}
+
+.form__class {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__label {
+    margin-top: 20px;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 400;
+	font-size: 15px;
+}
+
+.form__input-area {
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 400;
+	font-size: 15px;
+}
+
+.form__send-btn {
+	padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #2e2e2e;
+    cursor: pointer;
+	transition: 0.2s;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 400;
+	font-size: 16px;
+}
+.form__send-btn:disabled {
+    background-color: #ccc;
+}
+.form__send-btn:hover {
+    background-color: #ddd;
+}
+.form__send-btn:disabled:hover {
+    background-color: #ccc;
+}
+
+.text__error-log {
+    margin-top: 10px;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 400;
+	font-size: 15px;
+    color: #9d2121;
+}
+
+.login-error {
+    margin-top: 25px;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 400;
+	font-size: 15px;
+    color: #9d2121;
+}

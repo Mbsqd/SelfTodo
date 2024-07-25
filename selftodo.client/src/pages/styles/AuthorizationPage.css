@@ -1,0 +1,8 @@
+.authorization__container {
+	margin-top: 70px;
+    display: flex;
+    width: 800px;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+	height: 600px;
+}

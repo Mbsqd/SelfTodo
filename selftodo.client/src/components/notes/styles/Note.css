@@ -1,0 +1,141 @@
+.div__note {
+	width: 765px;
+	display: flex;
+	justify-content: space-between;
+	margin-right: 65px;
+}
+
+.div__note-btn {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+	gap: 20px;
+}
+
+.btn__note-btn {
+	color: #000000;
+	width: 40px;
+	height: 40px;
+	background-color: #C4C2B6;
+	border: solid 2px;
+	border-radius: 10px;
+	border-color: #7E655F;
+    cursor: pointer;
+	transition: 0.2s;
+}
+.btn__note-btn:hover {
+	border-color: #A73920;
+}
+.btn__note-btn:active {
+	box-shadow: inset 0 0 5px #A73920;
+}
+
+#btn__post-status {
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 300;
+	font-size: 16px;
+	padding: 0;
+}
+
+.text__note-block {
+	width: 700px;
+	background-color: #C4C2B6;
+	border: solid 2px;
+	border-radius: 10px;
+	border-color: #7E655F;
+}
+
+.text__name-note {
+	margin-top: 20px;
+	margin-left: 50px;
+	padding-left: 2px;
+	padding-top: 1px;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 700;
+    font-size: 20px;
+	color: #000000;
+}
+
+.text__content-note {
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 20px;
+	padding-left: 2px;
+	padding-top: 1px;
+	font-family: "JetBrains Mono", monospace;
+	color: #000000;
+	font-weight: 400;
+	font-size: 16px;
+	min-height: 52px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.div__notes-list {
+	display: flex;
+	flex-direction: column;
+	margin-top: 25px;
+	gap: 30px;
+}
+
+.div__date {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 14px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 14px;
+}
+
+.date__note-time {
+	font-family: "JetBrains Mono", monospace;
+	color: #403F3B;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.div__edit-note {
+	display: flex;
+	flex-direction: column;
+	width: 700px;
+}
+
+.div__edit-note-btn {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+	gap: 20px;
+}
+
+.edit__input-title {
+	margin-top: 17px;
+	margin-left: 50px;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 700;
+    font-size: 20px;
+	color: #000000;
+	background-color: transparent;
+	border: none;
+	resize: none; /* This prevents manual resizing by the user */
+    overflow: hidden;
+	width: 600px;
+}
+
+.edit__input-text {
+	margin-top: 4px;
+	margin-left: 50px;
+	margin-bottom: 20px;
+	width: 600px;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1;
+	background-color: transparent;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	border: none;
+	resize: none;
+    overflow: hidden;
+	min-height: 52px;
+}
