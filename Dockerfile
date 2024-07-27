@@ -12,10 +12,12 @@ WORKDIR /src
 COPY ["SelfTodo.Server/SelfTodo.Server.csproj", "SelfTodo.Server/"]
 RUN dotnet restore "./SelfTodo.Server/SelfTodo.Server.csproj"
 WORKDIR "/src/SelfTodo.Server"
+RUN apt-get update && apt-get install -y nodejs npm
+RUN apt-get update && apt-get install -y git
 COPY . .
 
-RUN apt-get update && apt-get install -y nodejs npm
-RUN dotnet build "./SelfTodo.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "SelfTodo.Server.csproj" -c Release -o /app/build 
+
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
