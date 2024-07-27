@@ -6,7 +6,10 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 
-RUN sudo apt-get update && sudo apt-get install -y git
+USER root
+RUN rm -rf /var/lib/apt/lists/* \
+    && apt-get update \
+    && apt-get install -y git
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
@@ -16,7 +19,7 @@ RUN dotnet restore "./SelfTodo.Server/SelfTodo.Server.csproj"
 COPY . .
 WORKDIR "/src/SelfTodo.Server"
 
-RUN sudo apt-get update && sudo apt-get install -y nodejs npm
+RUN apt-get update && apt-get install -y nodejs npm
 RUN dotnet build "./SelfTodo.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
