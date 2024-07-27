@@ -1,11 +1,27 @@
 version: '3.4'
+networks:
+  dev:
 
 services:
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    depends_on:
+      - selftodo.server
+      - selftodo.client
+    volumes:
+      - './nginx.conf:/etc/nginx/nginx.conf'
+    networks:
+      - dev
+
   selftodo.server:
     image: ${DOCKER_REGISTRY-}selftodoapi
     build:
       context: .
       dockerfile: SelfTodo.Server/Dockerfile
+    networks:
+      - dev
 
   postgres:
     container_name: postgres
@@ -20,6 +36,14 @@ services:
       - 5433:5432
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    networks:
+      - dev
+
+  selftodo.client:
+    build:
+      context: ./selftodo.client
+    networks:
+      - dev
   
 volumes:
   postgres-data:
