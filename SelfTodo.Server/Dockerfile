@@ -13,6 +13,8 @@ COPY ["SelfTodo.Server/SelfTodo.Server.csproj", "SelfTodo.Server/"]
 RUN dotnet restore "./SelfTodo.Server/SelfTodo.Server.csproj"
 COPY . .
 WORKDIR "/src/SelfTodo.Server"
+
+RUN apt-get update && apt-get install -y nodejs npm
 RUN dotnet build "./SelfTodo.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
